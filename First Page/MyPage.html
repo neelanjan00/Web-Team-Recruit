@@ -14,9 +14,12 @@
     <div class="container">
         <div class="row">
             <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                <br>
                 <div class="row">
-                    <br>
-                    <img src="https://image.shutterstock.com/image-vector/feather-ink-bottle-black-vector-260nw-224580160.jpg" class="img-responsive rounded-circle col-xs-12" allign="middle" id="logo">
+                    <div class="col-sm-12">
+                        <center><img src="https://image.shutterstock.com/image-vector/feather-ink-bottle-black-vector-260nw-224580160.jpg" 
+                        class="img-responsive rounded-circle" id="logo"></center>
+                    </div>
                 </div>
                 <div class="row">
                     <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 d-none d-sm-block" id="Quotes">
@@ -29,9 +32,9 @@
                 </div>
             </div>
             <div class="col-xl-9 col-lg-9 col-md-9 col-sm-9 col-xs-12" id="rightsidebar">
-                <form class="mx-auto" onsubmit="return submit()" action="ReferalPage/Submited.html" method="post">
+                <form class="mx-auto" onsubmit="return submit();" method="post">
                     <br>
-                    <h1>Fill up the Details</h1>
+                    <h1><center>Fill up the Details</center></h1>
                     <fieldset id="components">
                         <br>
                         <label for="name1" class="lefttext">Username:</label>
@@ -49,7 +52,7 @@
                         <label for="rpassword" class="lefttext">Repeat Your Password:</label>
                         <input type="password" id="rpassword" name="user_password" required>
                         <br><br><br>
-                        <button type="submit" value="submit" id="submitform">Next</button>
+                        <button type="submit" id="submitform">Next</button>
                     </fieldset>
                 </form>
             </div>
@@ -58,5 +61,22 @@
 </body>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-<script type="text/javascript" src="MyPage.js"></script>
+<script>
+    function submit()
+    {
+        var pass = document.getElementById("password").value;
+        var rpass = document.getElementById("rpassword").value;
+
+        if(rpass == (pass))
+        {
+            return true;
+        }
+
+        else
+        {
+            alert("Type the password correctly!");
+            return false;
+        }
+    }
+</script>
 </html>
