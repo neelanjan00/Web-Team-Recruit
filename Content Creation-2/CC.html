@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Content Creation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" media="screen" href="CC.css" />
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="mt-4 offset-xl-2 col-xl-8 col-12 offset-0">
+                <button type="button" class="ml-3 btn btn-dark format" onclick="func();">Story</button>
+                <button type="button" class="btn btn-dark format" onclick="func();">Poem</button>
+                <button type="button" class="btn btn-dark format" onclick="func();">Blog</button>
+                <button type="button" class="btn btn-dark format" onclick="func();">Shayari</button>
+                <button type="button" class="btn btn-dark format" onclick="func();">Open Letter</button>
+                <button type="button" class="btn btn-dark format" onclick="func();">Musing</button>
+                <button type="button" class="btn btn-dark format" onclick="func();">Quote</button>
+                <button type="button" class="btn btn-dark format" onclick="func();">Page</button>
+                <button type="button" class="btn btn-dark format" onclick="func();">Scribbled Experience</button>
+                <form class="mt-3">
+                    <div class="form-group mb-0">
+                        <input type="text" id="title" class="form-control" placeholder="Title">
+                    </div>
+                    <div class="form-group">
+                        <textarea class="form-control" id="content-body"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="tags" class="form-control" placeholder="tags">
+                    </div>
+                </form>
+                <button id="next" onmouseover="document.getElementById('arrow').style.display = 'inline' " onmouseout="document.getElementById('arrow').style.display = 'none' "><p style="display: inline;">Next</p><p class="ml-2" style="display: none" id="arrow">&rarr;</p></button>
+            </div>
+        </div>
+    </div>
+    <script>
+        /* The function func gets called everytime a button is clicked, the for loop ensures that every button that is red in color gets reverted to normal color and then the backgroundColor of the invoking object i.e. the button clicked gets changed to red*/
+        var types = document.getElementsByClassName('format');
+        function func(){
+            for(var i=0; i<types.length; ++i){
+                if(types.item(i).style.backgroundColor == 'red'){
+                    types.item(i).style.backgroundColor = 'rgb(52, 58, 64)'; //the default btn-dark color
+                }
+            }
+            this.style.backgroundColor = 'red';
+        }
+    </script>
+</body>
+</html>
