@@ -9,21 +9,28 @@
     <link rel="stylesheet" type="text/css" media="screen" href="CC.css" />
 </head>
 <body>
+    <center>
     <div class="container-fluid">
         <div class="row">
-            <div class="mt-4 offset-xl-2 col-xl-8 col-12 offset-0">
-                <button type="button" class="ml-3 btn btn-dark format" onclick="func();">Story</button>
-                <button type="button" class="btn btn-dark format" onclick="func();">Poem</button>
-                <button type="button" class="btn btn-dark format" onclick="func();">Blog</button>
-                <button type="button" class="btn btn-dark format" onclick="func();">Shayari</button>
-                <button type="button" class="btn btn-dark format" onclick="func();">Open Letter</button>
-                <button type="button" class="btn btn-dark format" onclick="func();">Musing</button>
-                <button type="button" class="btn btn-dark format" onclick="func();">Quote</button>
-                <button type="button" class="btn btn-dark format" onclick="func();">Page</button>
-                <button type="button" class="btn btn-dark format" onclick="func();">Scribbled Experience</button>
+            <div class="mt-2 offset-xl-2 col-xl-8 col-12 offset-0">
+                <button type="button" class="btn btn-dark format ml-sm-2 ml-0" id="story" onclick="change(this.id);">Story</button>
+                <button type="button" class="btn btn-dark format ml-sm-2 ml-0" id="poem" onclick="change(this.id);">Poem</button>
+                <button type="button" class="btn btn-dark format ml-sm-2 ml-0" id="blog" onclick="change(this.id);">Blog</button>
+                <button type="button" class="btn btn-dark format ml-sm-2 ml-0" id="experience" onclick="change(this.id);">Scribbled Experience</button>
                 <form class="mt-3">
                     <div class="form-group mb-0">
                         <input type="text" id="title" class="form-control" placeholder="Title">
+                    </div>
+                    <div class="row">
+                        <div class="offset-xl-2 offset-lg-3 offset-md-2 offset-sm-1 offset-0" style="width: 550px; background-image: linear-gradient(to right, gray, white, gray);">
+                            <img style="display:inline; cursor: pointer; background-color: transparent;" width="30" height="35" class="mx-sm-3 mx-2" onclick="document.execCommand('bold');" src="Images/Bold.png">
+                            <img style="display:inline; cursor: pointer; background-color: transparent;" width="30" height="35" class="mx-sm-3 mx-2" onclick="document.execCommand('italic');" src="Images/Italic.png">
+                            <img style="display:inline; cursor: pointer; background-color: transparent;" width="30" height="35" class="mx-sm-3 mx-2"  src="Images/l-align.png">
+                            <img style="display:inline; cursor: pointer; background-color: transparent;" width="30" height="35" class="mx-sm-3 mx-2"  src="Images/r-align.png">
+                            <img style="display:inline; cursor: pointer; background-color: transparent;" width="30" height="35" class="mx-sm-3 mx-2"  src="Images/Justify.png">
+                            <img style="display:inline; cursor: pointer; background-color: transparent;" width="30" height="35" class="mx-sm-3 mx-2"  src="Images/l-indent.png">
+                            <img style="display:inline; cursor: pointer; background-color: transparent;" width="30" height="35" class="mx-sm-3 mx-2"  src="Images/r-indent.png">
+                        </div>
                     </div>
                     <div class="form-group">
                         <textarea class="form-control" id="content-body"></textarea>
@@ -36,16 +43,16 @@
             </div>
         </div>
     </div>
+    </center>
     <script>
-        /* The function func gets called everytime a button is clicked, the for loop ensures that every button that is red in color gets reverted to normal color and then the backgroundColor of the invoking object i.e. the button clicked gets changed to red*/
         var types = document.getElementsByClassName('format');
-        function func(){
-            for(var i=0; i<types.length; ++i){
-                if(types.item(i).style.backgroundColor == 'red'){
-                    types.item(i).style.backgroundColor = 'rgb(52, 58, 64)'; //the default btn-dark color
-                }
+
+        function change(e){
+            for (var i=0; i<types.length; ++i){
+                types.item(i).style.backgroundColor = '#343a40';
             }
-            this.style.backgroundColor = 'red';
+
+            document.getElementById(e).style.backgroundColor = 'red';
         }
     </script>
 </body>

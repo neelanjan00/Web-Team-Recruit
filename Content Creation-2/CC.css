@@ -3,20 +3,19 @@ body {
 }
 
 input#title {
-
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
     border-bottom-left-radius: 0px;
     border-bottom-right-radius: 0px;
-    font-size: 30px;
+    font-size: 25px;
     font-weight: 400;
-    height: 50px;
+    height: 30px;
     outline: none;
-    border-top: none;
-    border-left: none;
-    border-right: none;
-    border-bottom: none;
+    border: none;
     padding: 25px;
+    padding-top: 28px;
+    padding-bottom: 28px;
+    width: 500px;
 }
 
 input#title.form-control:focus{
@@ -25,20 +24,16 @@ input#title.form-control:focus{
 }
 
 textarea#content-body.form-control{
-    border-top-color: rgba(127, 255, 212, 0);
     border-top-left-radius: 0px;
     border-top-right-radius: 0px;
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
-    border-top-color: black;
-    border-bottom: none;
-    border-left: none;
-    border-right: none;
+    border: none;
     height: 340px;
+    width: 500px;
 }
 
 textarea#content-body.form-control:focus{
-    border: none;
     box-shadow: none;
 }
 
@@ -48,6 +43,7 @@ textarea#content-body.form-control:focus{
 }
 
 #tags{
+    width: 500px;
     border: none;
     border-radius: 10px;
 }
@@ -59,7 +55,7 @@ textarea#content-body.form-control:focus{
 
 button#next{
     float: right;
-    margin-right: 10px;
+    margin-right: 160px;
     border-radius: 15px;
     border: none;
     height: 35px;
